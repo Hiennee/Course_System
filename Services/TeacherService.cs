@@ -11,7 +11,7 @@ namespace Course_System.Services
         {
             _context = context;
         }
-        private async Task<ICollection<TeacherDTO>> GetAllTeachers()
+        public async Task<ICollection<TeacherDTO>> GetAllTeachers()
         {
             return await _context.Teachers.Select(t => new TeacherDTO
             {
@@ -21,7 +21,7 @@ namespace Course_System.Services
                 ContractEnd = t.ContractEnd,
             }).ToListAsync();
         }
-        private async Task<TeacherDTO> GetTeacherById(string id)
+        public async Task<TeacherDTO> GetTeacherById(string id)
         {
             return await _context.Teachers.Where(t => t.UserId.Equals(id)).Select(t => new TeacherDTO
             {
@@ -31,7 +31,7 @@ namespace Course_System.Services
                 ContractEnd = t.ContractEnd,
             }).FirstOrDefaultAsync();
         }
-        private async Task<ICollection<TeacherDTO>> GetTeachersByName(string name)
+        public async Task<ICollection<TeacherDTO>> GetTeachersByName(string name)
         {
             return await _context.Users.Where(u => (u.FirstName + u.LastName).Contains(name)).Select(u => new TeacherDTO
             {
@@ -41,7 +41,7 @@ namespace Course_System.Services
                 ContractEnd = u.Teacher.ContractEnd,
             }).ToListAsync();
         }
-        private async Task<List<DateTime>> GetTeacherContractStatus(string teacherId)
+        public async Task<List<DateTime>> GetTeacherContractStatus(string teacherId)
         {
             //[0]: start, [1]: end;
             return await _context.Teachers.Where(t => t.UserId.Equals(teacherId)).Select(t => new List<DateTime>

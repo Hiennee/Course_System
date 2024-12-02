@@ -1,6 +1,6 @@
-﻿namespace Course_System.DTOs
+﻿namespace Course_System.Models
 {
-    public class ClassDTO
+    public class Course
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +14,7 @@
         public string Room { get; set; }
         public string? Room_addons { get; set; }
         public double TuitionMoney { get; set; }
+        public Teacher Teacher { get; set; }
+        public Semester Semester { get; set; }
     }
 }

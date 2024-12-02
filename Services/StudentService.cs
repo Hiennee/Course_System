@@ -58,11 +58,11 @@ namespace Course_System.Services
                 return false;
             }
         }
-        public async Task<ICollection<ClassDTO>> GetClassesOfStudent(string studentId)
+        public async Task<ICollection<CourseDTO>> GetClassesOfStudent(string studentId)
         {
             var classesId = await _context.StudentClassDetails.Where(scd => scd.StudentId.Equals(studentId))
                                                               .Select(scd => scd.ClassId).ToListAsync();
-            return await _context.Classes.Where(c => classesId.Contains(c.Id)).Select(c => new ClassDTO
+            return await _context.Classes.Where(c => classesId.Contains(c.Id)).Select(c => new CourseDTO
             {
                 Id = c.Id,
                 Name = c.Name,

@@ -9,7 +9,7 @@
         public DateTime DueDate { get; set; }
         public DateTime? PaymentDate { get; set; }
         public Semester Semester { get; set; }
-        public Class Class { get; set; }
+        public Course Class { get; set; }
         public Student Student { get; set; }
     }
 }

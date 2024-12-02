@@ -15,7 +15,7 @@
         public DateTime? PaymentDate { get; set; }
         public string AdminEmail { get; set; }
         public Student Student { get; set; }
-        public Class Class { get; set; }
+        public Course Class { get; set; }
         public Semester Semester { get; set; }
         public Admin Issuer { get; set; }
     }

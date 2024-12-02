@@ -9,7 +9,7 @@ namespace Course_System.Models
 
         }
         public DbSet<Admin> Admins { get; set; }
-        public DbSet<Class> Classes { get; set; }
+        public DbSet<Course> Classes { get; set; }
         public DbSet<Semester> Semesters { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<StudentClassDetail> StudentClassDetails { get; set; }

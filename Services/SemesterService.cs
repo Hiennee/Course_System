@@ -19,9 +19,9 @@ namespace Course_System.Services
         {
             return await _context.Semesters.Where(s => s.Id.Equals(id)).FirstOrDefaultAsync();
         }
-        public async Task<ICollection<ClassDTO>> GetClassesInSemester(string id)
+        public async Task<ICollection<CourseDTO>> GetClassesInSemester(string id)
         {
-            return await _context.Classes.Where(c => c.SemesterId.Equals(id)).Select(c => new ClassDTO
+            return await _context.Classes.Where(c => c.SemesterId.Equals(id)).Select(c => new CourseDTO
             {
                 Id = c.Id,
                 Name = c.Name,

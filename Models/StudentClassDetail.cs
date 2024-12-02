@@ -10,7 +10,7 @@
         public double Grade04 { get; set; }
         public double Bonus { get; set; }
         public double GradeTotal { get; set; }
-        public Class Class { get; set; }
+        public Course Class { get; set; }
         public Student Student { get; set; }
     }
 }
